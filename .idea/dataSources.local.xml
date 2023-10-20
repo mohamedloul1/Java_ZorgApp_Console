@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal" created-in="IU-232.9559.62">
+    <data-source name="ZorgApp" uuid="53f96d0f-a8a5-4852-a427-961e1389346b">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MSSQL" exact-version="0" />
+      <schema-mapping />
+    </data-source>
+    <data-source name="ZorgConsoleApp" uuid="668cc7be-f3c2-4fac-9a8e-f4878a710e00">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MSSQL" exact-version="0" />
+      <schema-mapping />
+    </data-source>
+  </component>
+</project>
