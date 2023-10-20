@@ -38,7 +38,7 @@ public class PatientController {
                             resultSet.getInt("PatientID"),
                             resultSet.getString("FirstName"),
                             resultSet.getString("LastName"),
-                            resultSet.getDate("DateOfBirth"),
+                            resultSet.getDate("DateOfBirth").toLocalDate(),
                             resultSet.getDouble("PatientHeight"),
                             resultSet.getDouble("PatienWeight"));
 //                    System.out.format(" Patiëntnummer:\u001B[32m %d\u001B[0m", patient.getPatientID());
@@ -66,10 +66,10 @@ public class PatientController {
             for (Patient patient : patintList) {
                 double height = patient.getPatientHeight();
                 double weight = patient.getPatientWeight();
-                Date newDateOfBirth = patient.getDateOfBirth();
+                LocalDate newDateOfBirth = patient.getDateOfBirth();
 
-                double bmi = calculateBMI(height, weight);
                 int age = calcAgeInYears(newDateOfBirth);
+                double bmi = calculateBMI(height, weight);
                 System.out.format(" Patiëntnummer:\u001B[32m %d\u001B[0m", patient.getPatientID());
                 System.out.format(" Voornaam:\u001B[32m%s\u001B[0m", patient.getFirstName());
                 System.out.format(" Achternaam:\u001B[32m%s\u001B[0m", patient.getLastName());
@@ -90,10 +90,9 @@ public class PatientController {
         return Math.round(bmi * 100.0) / 100.0;
     }
 
-    public int calcAgeInYears(Date newDateOfBirth) {
-        LocalDate dateOfBirth = newDateOfBirth.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+    public int calcAgeInYears(LocalDate newDateOfBirth) {
         LocalDate currentDate = LocalDate.now();
-        Period period = Period.between(dateOfBirth, currentDate);
+        Period period = Period.between(newDateOfBirth, currentDate);
         return period.getYears();
     }
 

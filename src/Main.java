@@ -1,5 +1,6 @@
 public class Main {
     public static void main(String[] args) {
+        Users users = new Users(1, "MohamedLoul","HuisArts");
 //        Menus menus = new Menus();
 //        menus.mainMenu();
         PatientController patientController = new PatientController();

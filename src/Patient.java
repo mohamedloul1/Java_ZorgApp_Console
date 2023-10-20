@@ -5,10 +5,10 @@ public class Patient {
     private int patientID;
     private String firstName;
     private String lastName;
-    private Date dateOfBirth;
+    private LocalDate dateOfBirth;
      double patientHeight;
      double patientWeight;
-    public Patient(int patientID, String firstName, String lastName, Date dateOfBirth, double patientHeight, double patientWeight) {
+    public Patient(int patientID, String firstName, String lastName, LocalDate dateOfBirth, double patientHeight, double patientWeight) {
         this.patientID = patientID;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -41,11 +41,11 @@ public class Patient {
         this.lastName = lastName;
     }
 
-    public Date getDateOfBirth() {
+    public LocalDate getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(Date dateOfBirth) {
+    public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
